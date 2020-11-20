@@ -1,0 +1,75 @@
+/* 通用样式 */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.area {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box,
+.edit {
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 0 20px -10px hsl(187, 97%, 24%);
+    overflow: hidden;
+    /* overflow为非visible时有效 */
+    /* 设置可以手动调节dom大小 */
+    resize: both;
+}
+
+
+.box {
+    margin-right: 20px;
+}
+
+.box>div {
+    /* 允许单句自动换行 */
+    word-wrap: break-word;
+}
+
+.box>div>p {
+    margin: 0;
+    padding: 10px;
+}
+
+.code {
+    /* 设置如何处理留白 */
+    white-space: pre-wrap;
+    outline: none;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+/* 左定自适应 */
+.one div {
+    height: 100%;
+}
+
+.one .left {
+    width: 100px;
+    float: left;
+    background-color: lightblue;
+    overflow: hidden;
+}
+
+.one .right {
+    width: auto;
+    margin-left: 100px;
+    background-color: lightcoral;
+}

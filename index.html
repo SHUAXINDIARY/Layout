@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h3>左定右自适应</h3>
+            <div class="area">
+                <div class="box show one">
+                    <div class="left">
+                        <p>left</p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            rightrightrightrightrightrightrightrightrightright
+                        </p>
+                    </div>
+                </div>
+                <div class="class edit">
+                    <!-- contenteditable表示内容是否可以被编辑 -->
+                    <style class="code" style="display: block;">
+                        .one .left {
+                            width: 100px;
+                            float: left;
+                            background-color: lightblue;
+                            overflow: hidden;
+                        }
+
+                        .one .right {
+                            width: auto;
+                            margin-left: 100px;
+                            background-color: lightcoral;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -2,47 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布局demo</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-    <div class="container">
+  <!-- 左定右自适应 -->
+  <div class="container">
+    <div>
+      <h3>
+        <span>左定右自适应</span>
         <div>
-            <h3>左定右自适应</h3>
-            <div class="area">
-                <div class="box show one">
-                    <div class="left">
-                        <p>left</p>
-                    </div>
-                    <div class="right">
-                        <p>
-                            rightrightrightrightrightrightrightrightrightright
-                        </p>
-                    </div>
-                </div>
-                <div class="class edit">
-                    <!-- contenteditable表示内容是否可以被编辑 -->
-                    <style class="code" style="display: block;">
-                        .one .left {
-                            width: 100px;
-                            float: left;
-                            background-color: lightblue;
-                            overflow: hidden;
-                        }
-
-                        .one .right {
-                            width: auto;
-                            margin-left: 100px;
-                            background-color: lightcoral;
-                        }
-                    </style>
-                </div>
-            </div>
+          <span class="btn viewHTML">查看HTML</span>
+          <span class="btn viewCSS">查看CSS</span>
         </div>
+      </h3>
+      <div class="area">
+        <div class="box show one">
+          <div class="left">
+            <p>left</p>
+          </div>
+          <div class="right">
+            <p>
+              rightrightrightrightrightrightrightrightrightright
+            </p>
+          </div>
+        </div>
+        <div class="edit">
+          <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
+          <code class="code-html" style="display: block;">
+            &lt;div class="one"&gt;
+              &lt;br&gt;
+              &lt;div class="left"&gt;
+                &lt;p&gt;left&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class="right"&gt;
+                &lt;p&gt;
+                  rightrightrightrightrightrightrightrightrightright
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+          <!-- contenteditable表示内容是否可以被编辑 -->
+          <style class="code-css" style="display: none;">
+            .one div {
+              height: 100%;
+            }
+
+            .one .left {
+              width: 100px;
+              float: left;
+              background-color: lightblue;
+              overflow: hidden;
+            }
+
+            .one .right {
+              width: auto;
+              margin-left: 100px;
+              background-color: lightcoral;
+            }
+          </style>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- 左右定中间自适应 -->
+  <div class="container">
+    <div>
+      <h3>左右定，中间自适应</h3>
+      <div class="area">
+        <div class="box show two"></div>
+        <div class="edit"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
 </body>
 
 </html>

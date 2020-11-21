@@ -56,7 +56,8 @@ h3 {
   resize: both;
   position: absolute;
 }
-.edit{
+
+.edit {
   margin-left: 520px;
 }
 
@@ -101,5 +102,30 @@ h3 {
 .one .right {
   width: auto;
   margin-left: 100px;
+  background-color: lightcoral;
+}
+
+/* 两边固定中间自适应 */
+.two div {
+  height: 100%;
+}
+
+.two .left,
+.two .right {
+  width: 100px;
+  background-color: lightblue;
+}
+
+.two .left {
+  float: left;
+}
+
+.two .right {
+  float: right;
+}
+
+.two .mid {
+  margin-left: 100px;
+  margin-right: 100px;
   background-color: lightcoral;
 }

@@ -20,7 +20,7 @@
         </div>
       </h3>
       <div class="area">
-        <div class="box show one">
+        <div class="box one">
           <div class="left">
             <p>left</p>
           </div>
@@ -31,7 +31,12 @@
           </div>
         </div>
         <div class="edit">
-          <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
+          <!-- 
+            让dom作为文本输出
+            1.xmp包裹
+            2.pre包裹
+            3.code包裹
+           -->
           <code class="code-html" style="display: block;">
             &lt;div class="one"&gt;
             &lt;br&gt;
@@ -72,7 +77,7 @@
   <div class="container">
     <div>
       <h3>
-        <span>左右定中间自适应</span>
+        <span>两边固定中间自适应</span>
         <div>
           <span class="btn viewHTML" data-type="HTML">HTML</span>
           <span class="btn viewCSS" data-type="CSS">CSS</span>
@@ -83,47 +88,54 @@
           <div class="left">
             <p>left</p>
           </div>
-          <div class="mid">
-            <p>center</p>
-          </div>
           <div class="right">
             <p>
               right
             </p>
           </div>
+          <div class="mid">
+            <p>centercentercentercentercentercentercenter</p>
+          </div>
         </div>
         <div class="edit">
           <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
           <code class="code-html" style="display: block;">
-            &lt;div class="one"&gt;
-            &lt;br&gt;
             &lt;div class="left"&gt;
             &lt;p&gt;left&lt;/p&gt;
             &lt;/div&gt;
             &lt;div class="right"&gt;
             &lt;p&gt;
-            rightrightrightrightrightrightrightrightrightright
+            right
             &lt;/p&gt;
             &lt;/div&gt;
+            &lt;div class="mid"&gt;
+            &lt;p&gt;centercentercentercentercentercentercenter&lt;/p&gt;
             &lt;/div&gt;
           </code>
           <!-- contenteditable表示内容是否可以被编辑 -->
           <style class="code-css" style="display: none;">
-            .one div {
+            .two div {
               height: 100%;
             }
 
-            .one .left {
+            .two .left,
+            .two .right {
               width: 100px;
-              float: left;
               background-color: lightblue;
-              overflow: hidden;
             }
 
-            .one .right {
-              width: auto;
+            .two .left {
+              float: left;
+            }
+
+            .mid {
               margin-left: 100px;
+              margin-right: 100px;
               background-color: lightcoral;
+            }
+
+            .two .right {
+              float: right;
             }
           </style>
         </div>

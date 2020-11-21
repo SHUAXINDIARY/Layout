@@ -15,8 +15,8 @@
       <h3>
         <span>左定右自适应</span>
         <div>
-          <span class="btn viewHTML">查看HTML</span>
-          <span class="btn viewCSS">查看CSS</span>
+          <span class="btn viewHTML" data-type="HTML">HTML</span>
+          <span class="btn viewCSS" data-type="CSS">CSS</span>
         </div>
       </h3>
       <div class="area">
@@ -34,15 +34,15 @@
           <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
           <code class="code-html" style="display: block;">
             &lt;div class="one"&gt;
-              &lt;br&gt;
-              &lt;div class="left"&gt;
-                &lt;p&gt;left&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class="right"&gt;
-                &lt;p&gt;
-                  rightrightrightrightrightrightrightrightrightright
-                &lt;/p&gt;
-              &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div class="left"&gt;
+            &lt;p&gt;left&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="right"&gt;
+            &lt;p&gt;
+            rightrightrightrightrightrightrightrightrightright
+            &lt;/p&gt;
+            &lt;/div&gt;
             &lt;/div&gt;
           </code>
           <!-- contenteditable表示内容是否可以被编辑 -->
@@ -71,10 +71,62 @@
   <!-- 左右定中间自适应 -->
   <div class="container">
     <div>
-      <h3>左右定，中间自适应</h3>
+      <h3>
+        <span>左右定中间自适应</span>
+        <div>
+          <span class="btn viewHTML" data-type="HTML">HTML</span>
+          <span class="btn viewCSS" data-type="CSS">CSS</span>
+        </div>
+      </h3>
       <div class="area">
-        <div class="box show two"></div>
-        <div class="edit"></div>
+        <div class="box two">
+          <div class="left">
+            <p>left</p>
+          </div>
+          <div class="mid">
+            <p>center</p>
+          </div>
+          <div class="right">
+            <p>
+              right
+            </p>
+          </div>
+        </div>
+        <div class="edit">
+          <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
+          <code class="code-html" style="display: block;">
+            &lt;div class="one"&gt;
+            &lt;br&gt;
+            &lt;div class="left"&gt;
+            &lt;p&gt;left&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="right"&gt;
+            &lt;p&gt;
+            rightrightrightrightrightrightrightrightrightright
+            &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+          <!-- contenteditable表示内容是否可以被编辑 -->
+          <style class="code-css" style="display: none;">
+            .one div {
+              height: 100%;
+            }
+
+            .one .left {
+              width: 100px;
+              float: left;
+              background-color: lightblue;
+              overflow: hidden;
+            }
+
+            .one .right {
+              width: auto;
+              margin-left: 100px;
+              background-color: lightcoral;
+            }
+          </style>
+        </div>
       </div>
     </div>
   </div>

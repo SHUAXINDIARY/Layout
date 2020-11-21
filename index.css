@@ -36,8 +36,9 @@ h3 {
 }
 
 .area {
-  display: flex;
-  justify-content: space-around;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  position: relative;
 }
 
 .box,
@@ -53,8 +54,11 @@ h3 {
   /* overflow为非visible时有效 */
   /* 设置可以手动调节dom大小 */
   resize: both;
+  position: absolute;
 }
-
+.edit{
+  margin-left: 520px;
+}
 
 .box {
   margin-right: 20px;

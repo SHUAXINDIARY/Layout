@@ -1,9 +1,10 @@
-const body = document.querySelector('body')
-var HTMLList = document.querySelectorAll('.viewHTML')
-var CSSList = document.querySelectorAll('.viewCSS')
-var HTMLCodeList = document.querySelectorAll('.code-html')
-var CSSCodeList = document.querySelectorAll('.code-css')
-
+const domList = {
+  body: document.querySelector('body'),
+  HTMLList: document.querySelectorAll('.viewHTML'),
+  CSSList: document.querySelectorAll('.viewCSS'),
+  HTMLCodeList: document.querySelectorAll('.code-html'),
+  CSSCodeList: document.querySelectorAll('.code-css')
+}
 const findTargetDom = (domList, targetDom) => {
   let index = 0
   while (index < domList.length) {
@@ -15,18 +16,18 @@ const findTargetDom = (domList, targetDom) => {
   return index
 }
 
-body.addEventListener('click', (e) => {
+domList.body.addEventListener('click', (e) => {
   const dom = e.target
   const targetType = dom.dataset.type
   // 根据type判断是都点击的是目标按钮
   if (targetType) {
     // 获取当前点击的dom索引
-    const targetIndex = findTargetDom(window[`${targetType}List`], dom)
+    const targetIndex = findTargetDom(domList[`${targetType}List`], dom)
     let HTMLStatus = 'none', CSSStatus = 'block'
     if (targetType === 'HTML') CSSStatus = 'none', HTMLStatus = 'block'
     if (targetType === 'CSS') CSSStatus = 'block', HTMLStatus = 'none'
     // 设置当前操作的dom
-    HTMLCodeList[targetIndex].style.display = HTMLStatus
-    CSSCodeList[targetIndex].style.display = CSSStatus
+    domList.HTMLCodeList[targetIndex].style.display = HTMLStatus
+    domList.CSSCodeList[targetIndex].style.display = CSSStatus
   }
 })

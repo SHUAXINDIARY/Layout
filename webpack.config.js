@@ -7,7 +7,8 @@ const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
   entry: {
-    app: './src/index.js',
+    // app: './src/index.js',
+    app: './src/main.ts'
   },
   output: {
     filename: '[name].bundle.js',
@@ -27,14 +28,32 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader',
+      //     'css-loader'
+      //   ]
+      // },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        test: /\.less$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "less-loader" // compiles Less to CSS
+        }]
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [
     // 显示打包进度
@@ -42,7 +61,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     // 使用模板
     new HtmlWebpackPlugin({
-      template: 'src/assets/index.html'
+      template: 'src/html/index.html'
     }),
     // new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()

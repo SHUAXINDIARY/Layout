@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布局demo</title>
+</head>
+
+<body>
+  <!-- 左定右自适应 -->
+  <div class="container">
+    <div>
+      <h3>
+        <span>左定右自适应</span>
+        <div>
+          <span class="btn viewHTML" data-type="HTML">HTML</span>
+          <span class="btn viewCSS" data-type="CSS">CSS</span>
+        </div>
+      </h3>
+      <div class="area">
+        <div class="box one">
+          <div class="left">
+            <p>left</p>
+          </div>
+          <div class="right">
+            <p>
+              rightrightrightrightrightrightrightrightrightright
+            </p>
+          </div>
+        </div>
+        <div class="edit">
+          <!-- 
+            让dom作为文本输出
+            1.xmp包裹
+            2.pre包裹
+            3.code包裹
+           -->
+          <code class="code-html" style="display: block;">
+            &lt;div class="one"&gt;
+            &lt;br&gt;
+            &lt;div class="left"&gt;
+            &lt;p&gt;left&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="right"&gt;
+            &lt;p&gt;
+            rightrightrightrightrightrightrightrightrightright
+            &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+          <!-- contenteditable表示内容是否可以被编辑 -->
+          <style class="code-css" style="display: none;">
+            .one div {
+              height: 100%;
+            }
+
+            .one .left {
+              width: 100px;
+              float: left;
+              background-color: lightblue;
+              overflow: hidden;
+            }
+
+            .one .right {
+              width: auto;
+              margin-left: 100px;
+              background-color: lightcoral;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 左右定中间自适应 -->
+  <div class="container">
+    <div>
+      <h3>
+        <span>两边固定中间自适应</span>
+        <div>
+          <span class="btn viewHTML" data-type="HTML">HTML</span>
+          <span class="btn viewCSS" data-type="CSS">CSS</span>
+        </div>
+      </h3>
+      <div class="area">
+        <div class="box two">
+          <div class="left">
+            <p>left</p>
+          </div>
+          <div class="right">
+            <p>
+              right
+            </p>
+          </div>
+          <div class="mid">
+            <p>centercentercentercentercentercentercenter</p>
+          </div>
+        </div>
+        <div class="edit">
+          <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
+          <code class="code-html" style="display: block;">
+            &lt;div class="left"&gt;
+            &lt;p&gt;left&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="right"&gt;
+            &lt;p&gt;
+            right
+            &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="mid"&gt;
+            &lt;p&gt;centercentercentercentercentercentercenter&lt;/p&gt;
+            &lt;/div&gt;
+          </code>
+          <!-- contenteditable表示内容是否可以被编辑 -->
+          <style class="code-css" style="display: none;">
+            .two div {
+              height: 100%;
+            }
+
+            .two .left,
+            .two .right {
+              width: 100px;
+              background-color: lightblue;
+            }
+
+            .two .left {
+              float: left;
+            }
+
+            .mid {
+              margin-left: 100px;
+              margin-right: 100px;
+              background-color: lightcoral;
+            }
+
+            .two .right {
+              float: right;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 垂直水平居中 -->
+  <div class="container">
+    <div>
+      <h3>
+        <span>垂直水平居中1</span>
+        <div>
+          <span class="btn viewHTML" data-type="HTML">HTML</span>
+          <span class="btn viewCSS" data-type="CSS">CSS</span>
+        </div>
+      </h3>
+      <div class="area">
+        <div class="box three">
+          <div class="outer">
+            <div class="inner"></div>
+          </div>
+        </div>
+        <div class="edit">
+          <!-- 废弃的标签，可以使用pre替代，pre内部<>需要转义 -->
+          <code class="code-html" style="display: block;">
+            &lt;div class="outer"&gt;
+            &lt;div class="inner"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+          <!-- contenteditable表示内容是否可以被编辑 -->
+          <style class="code-css" style="display: none;">
+            .outer {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              background-color: lightcyan;
+            }
+
+            .three .inner {
+              width: 100px;
+              height: 100px;
+              background-color: lightsalmon;
+              position: absolute;
+              margin: auto;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

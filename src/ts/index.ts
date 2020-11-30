@@ -1,9 +1,11 @@
 interface Dom {
+  // 声明索引签名
+  [key: string]: HTMLBodyElement | NodeListOf<HTMLElement>,
   body: HTMLBodyElement
   HTMLList: NodeListOf<HTMLElement>
   CSSList: NodeListOf<HTMLElement>
   HTMLCodeList: NodeListOf<HTMLElement>
-  CSSCodeList: NodeListOf<HTMLElement>
+  CSSCodeList: NodeListOf<HTMLElement>,
 }
 
 const domList: Dom = {
@@ -33,7 +35,7 @@ export default {
       if (targetType) {
         const key: string = `${targetType}List`
         // 获取当前点击的dom索引
-        const targetIndex = findTargetDom(domList[key], dom as HTMLElement)
+        const targetIndex = findTargetDom(domList[key] as NodeListOf<HTMLElement>, dom as HTMLElement)
         let HTMLStatus = 'none', CSSStatus = 'block'
         if (targetType === 'HTML') CSSStatus = 'none', HTMLStatus = 'block'
         if (targetType === 'CSS') CSSStatus = 'block', HTMLStatus = 'none'
